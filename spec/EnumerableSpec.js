@@ -1,3 +1,7 @@
+var obj = {
+  method: function(i) { return true }
+}
+
 describe("Array", function() {  
   describe(".map", function() {
     it("yields each element of the array into the function, calls it, and returns an array of the results", function() {
@@ -7,14 +11,13 @@ describe("Array", function() {
 
   describe(".each", function() {
     it("yields each element of the array into the function, calls it, and returns itself", function() {
-      this.mock = function() { return true }
-      spyOn(this, 'mock')
+      spyOn(obj, 'method')
 
-      expect([1,2,3].each(this.mock(i)).toEqual([1,2,3])
+      expect([1,2,3].each(function(i) { obj.method(i) })).toEqual([1,2,3])
 
-      expect(this.mock).toHaveBeenCalledWith(1)
-      expect(this.mock).toHaveBeenCalledWith(2)
-      expect(this.mock).toHaveBeenCalledWith(3)  
+      expect(obj.method).toHaveBeenCalledWith(1)
+      expect(obj.method).toHaveBeenCalledWith(2)
+      expect(obj.method).toHaveBeenCalledWith(3)  
     });
   });
 
