@@ -1,4 +1,3 @@
-
 # fun.js
 
 Ruby style functional methods with a side-effect free implmentation.
@@ -21,7 +20,11 @@ Well, now you can do similar in JS:
 
 ## Implementation
 
-The implementation is purely functional. Mutability is avoided and recursion is used extensively. This is because I wanted to write some code that would give me a better grasp of JS and FP.
+The implementation is purely functional. Mutability is avoided and recursion is used extensively.
+
+## Why?
+
+For shits and motherfucking giggles my guy.
 
 ## Todo
 
