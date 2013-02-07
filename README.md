@@ -1,6 +1,6 @@
 # fun.js
 
-Ruby style functional methods with a side-effect free implmentation.
+Ruby style functional methods with a side-effect free implementation.
 
 ## About
 
