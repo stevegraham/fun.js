@@ -63,8 +63,15 @@ var Enumerable = function() {
   }
 };
 
-Function.prototype.extend = function(module) {
-  module.apply(this.prototype)
+Function.prototype.method = function(name, func) {
+  if (typeof this.prototype[name] !== 'function') {
+    this.prototype[name] = func
+    return this
+  }
 }
+
+Function.method('extend', function(module) {
+  module.apply(this.prototype)
+})
 
 Array.extend(Enumerable)
